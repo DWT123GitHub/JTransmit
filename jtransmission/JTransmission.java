@@ -38,14 +38,14 @@ public class JTransmission
         */
     public static void createLocations(Collection<Location> locations)
     {
-        Location chippenham = new Location_impl("Chippenham", 450, 800);
-        Location bristol = new Location_impl("Bristol", 400, 810);
-        Location london = new Location_impl("London", 550, 820);
-        Location york = new Location_impl("York", 500, 600);
-        Location manchester = new Location_impl("Manchester", 400, 650);
-        Location edinburgh = new Location_impl("Edinburgh", 350, 420);
-        Location southampton = new Location_impl("Southampton", 450, 875);
-        Location cambridge = new Location_impl("Cambridge", 550, 725);
+        Location chippenham = new Location_impl("Chippenham", 225, 400);
+        Location bristol = new Location_impl("Bristol", 420, 405);
+        Location london = new Location_impl("London", 275, 410);
+        Location york = new Location_impl("York", 250, 300);
+        Location manchester = new Location_impl("Manchester", 200, 325);
+        Location edinburgh = new Location_impl("Edinburgh", 175, 210);
+        Location southampton = new Location_impl("Southampton", 225, 433);
+        Location cambridge = new Location_impl("Cambridge", 275, 365);
 
         locations.add(chippenham);
         chippenham.addDestination(bristol);
