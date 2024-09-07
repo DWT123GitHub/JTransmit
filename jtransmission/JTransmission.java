@@ -38,50 +38,59 @@ public class JTransmission
         */
     public static void createLocations(Collection<Location> locations)
     {
-        Location chippenham = new Location_impl("Chippenham", 225, 400);
-        Location bristol = new Location_impl("Bristol", 420, 405);
-        Location london = new Location_impl("London", 275, 410);
-        Location york = new Location_impl("York", 250, 300);
-        Location manchester = new Location_impl("Manchester", 200, 325);
-        Location edinburgh = new Location_impl("Edinburgh", 175, 210);
-        Location southampton = new Location_impl("Southampton", 225, 433);
-        Location cambridge = new Location_impl("Cambridge", 275, 365);
+        Location home = new Location_impl("Home", 250, 475);
+        Location rugbyClub = new Location_impl("Rugby Club", 150, 325);
+        Location school = new Location_impl("School", 400, 225);
+        Location sainsburys = new Location_impl("Sainsburys", 200, 550);
+        Location lidl = new Location_impl("Lidl", 300, 300);
+        Location CGI = new Location_impl("CGI", 300, 600);
+        Location station = new Location_impl("Station", 700, 350);
+        Location town = new Location_impl("Town", 650, 400);
 
-        locations.add(chippenham);
-        chippenham.addDestination(bristol);
-        chippenham.addDestination(london);
-        chippenham.addDestination(southampton);
+        locations.add(home);
+        home.addDestination(school);
+        home.addDestination(lidl);
+        home.addDestination(town); 
+        home.addDestination(station);
+        home.addDestination(sainsburys);
+        home.addDestination(CGI);
+        home.addDestination(rugbyClub);
 
-        locations.add(bristol);
-        bristol.addDestination(chippenham);
-        bristol.addDestination(manchester);
+        locations.add(rugbyClub);
+        rugbyClub.addDestination(home);
+        rugbyClub.addDestination(school);
 
-        locations.add(london);
-        london.addDestination(chippenham);
-        london.addDestination(york);
-        london.addDestination(southampton);
-        london.addDestination(cambridge);
+        locations.add(school);
+        school.addDestination(home);
+        school.addDestination(lidl);
+        school.addDestination(town);
 
-        locations.add(york);
-        york.addDestination(london);
-        york.addDestination(edinburgh);
-        york.addDestination(cambridge);
+        locations.add(sainsburys);
+        sainsburys.addDestination(CGI);
+        sainsburys.addDestination(home);
 
-        locations.add(manchester);
-        manchester.addDestination(bristol);
-        manchester.addDestination(edinburgh);
+        locations.add(lidl);
+        lidl.addDestination(school);
+        lidl.addDestination(home);
 
-        locations.add(edinburgh);
-        manchester.addDestination(manchester);
-        edinburgh.addDestination(york);
 
-        locations.add(southampton);
-        southampton.addDestination(london);
-        southampton.addDestination(chippenham);
 
-        locations.add(cambridge);
-        cambridge.addDestination(london);
-        cambridge.addDestination(york);
+        locations.add(CGI);
+        CGI.addDestination(home);
+        CGI.addDestination(sainsburys);
+
+        locations.add(station);
+        station.addDestination(town);
+        station.addDestination(home);
+
+        locations.add(town);
+        town.addDestination(home);
+        town.addDestination(school);
+        town.addDestination(station);
+        town.addDestination(lidl);
+        town.addDestination(rugbyClub);
+        town.addDestination(CGI);
+        town.addDestination(sainsburys);
 
     }
 

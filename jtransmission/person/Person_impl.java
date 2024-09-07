@@ -1,7 +1,9 @@
 package jtransmission.person;
 
-import jtransmission.person.Person;
+import java.util.Random;
 
+import jtransmission.person.Person;
+import jtransmission.config.Config;
 
 
 public class Person_impl implements Person
@@ -10,6 +12,8 @@ public class Person_impl implements Person
     private String name;
     private Status status;
     private int infectionPeriod;
+
+    private static Random rand = new Random();
 
     // A constructor
     public Person_impl(String name)
@@ -27,6 +31,10 @@ public class Person_impl implements Person
         if(infectionPeriod == 0)
         {
             this.status = Status.Immune;
+        }
+        if (rand.nextInt(100) < Config.MORTALITY)
+        {
+            this.status = Status.Dead;
         }
     }
 

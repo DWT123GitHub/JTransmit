@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.HashMap;
-
+import jtransmission.config.Config;
 
 public class Location_impl implements Location
 {
@@ -111,16 +111,19 @@ public class Location_impl implements Location
         {
             Person p = it.next();
 
-            peopleToRemove.add(p);
+            if(p.getStatus() != Person.Status.Dead)
+            {
+                peopleToRemove.add(p);
 
-            // Get a random destination
-            int index = rand.nextInt(destinations.size());
-            Location destination = (Location)destinations.toArray()[index];
+                // Get a random destination
+                int index = rand.nextInt(destinations.size());
+                Location destination = (Location)destinations.toArray()[index];
 
-            if(!peopleToAdd.containsKey(destination))
-                peopleToAdd.put(destination, new ArrayList<Person>());
+                if(!peopleToAdd.containsKey(destination))
+                    peopleToAdd.put(destination, new ArrayList<Person>());
 
-            peopleToAdd.get(destination).add(p);        
+                peopleToAdd.get(destination).add(p);        
+            }
         }
         people.removeAll(peopleToRemove);
 
@@ -143,10 +146,10 @@ public class Location_impl implements Location
                 {
                     if (otherPerson.getStatus() == Person.Status.Healthy)
                     {
-                        if (rand.nextInt(100) < 33)
+                        if (rand.nextInt(100) < Config.INFECTION_RATE)
                         {
                             otherPerson.setStatus(Person.Status.Infected);
-                            otherPerson.setInfectionPeriod(10);
+                            otherPerson.setInfectionPeriod(Config.INFECTION_PERIOD);
                         }
                     }
                 }

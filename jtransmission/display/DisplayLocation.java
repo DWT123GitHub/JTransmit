@@ -22,10 +22,10 @@ public class DisplayLocation
     Map<Status, Color> healthLookup = new HashMap<Status, Color>() 
     {
         {
-            put(Status.Healthy, Color.BLACK);
+            put(Status.Healthy, Color.GREEN);
             put(Status.Infected, Color.RED);
-            put(Status.Immune, Color.GREEN);
-            put(Status.Dead, Color.GRAY);
+            put(Status.Immune, Color.BLUE);
+            put(Status.Dead, Color.BLACK);
         }
     };
 

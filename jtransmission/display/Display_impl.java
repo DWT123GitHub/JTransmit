@@ -35,7 +35,7 @@ public class Display_impl extends JFrame implements Display
         JPanel map = new JPanel();
         add(map, BorderLayout.CENTER);
 
-        ImageIcon image = new ImageIcon("very_small_map.jpg");
+        ImageIcon image = new ImageIcon("chippenham.jpg");
         JLabel label = new JLabel(image);
         JScrollPane scrollPane = new JScrollPane(label);
         scrollPane.setSize(new Dimension(1000, 1000));
